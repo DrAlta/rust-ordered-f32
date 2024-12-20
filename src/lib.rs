@@ -7,18 +7,18 @@ mod traits;
 
 mod atan;
 mod atan2;
-mod consts;
-pub use consts::*;
+pub mod consts;
 mod into_inner;
 mod is_nan;
 mod nan;
 mod pow;
 mod powi;
 mod signed;
-
+mod sqrt;
+mod to_f32;
 
 use core::ops::{
-    Div, DivAssign, Mul, MulAssign, Rem, RemAssign, Sub,
+    Add, AddAssign, Div, DivAssign, Mul, MulAssign, Rem, RemAssign, Sub,
     SubAssign,
 };
 
@@ -221,6 +221,7 @@ macro_rules! impl_ordered_float_binop {
     };
 }
 
+impl_ordered_float_binop! {Add, add, AddAssign, add_assign}
 impl_ordered_float_binop! {Sub, sub, SubAssign, sub_assign}
 impl_ordered_float_binop! {Mul, mul, MulAssign, mul_assign}
 impl_ordered_float_binop! {Div, div, DivAssign, div_assign}

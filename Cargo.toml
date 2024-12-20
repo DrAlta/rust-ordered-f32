@@ -1,6 +1,6 @@
 [package]
 name        = "ordered-f32"
-version     = "0.1.0"
+version     = "0.1.7"
 authors     = [
   "Hsinhai Ataica",
   "Jonathan Reem <jonathan.reem@gmail.com>",

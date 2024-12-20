@@ -4,8 +4,6 @@ mod debug;
 mod deref_mut;
 mod deref;
 mod display;
-mod div_assign;
-mod div;
 mod eq;
 mod from_str;
 mod from;
