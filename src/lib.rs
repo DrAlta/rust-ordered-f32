@@ -1,4 +1,4 @@
-//! Wrappers for total order on Floats.  See the [`OrderedFloat`] and [`NotNan`] docs for details.
+//! Wrappers for total order on Floats.  See the [`OrderedF32`] and [`NotNan`] docs for details.
 
 mod ordered_f32;
 use num_traits::Float;
@@ -54,24 +54,24 @@ fn raw_double_bits(f: &f32) -> u64 {
 /// to itself, in contradiction with the IEEE standard.
 ///
 /// ```
-/// use ordered_float::OrderedFloat;
+/// use ordered_f32::OrderedF32;
 /// use std::f32::NAN;
 ///
-/// let mut v = [OrderedFloat(NAN), OrderedFloat(2.0), OrderedFloat(1.0)];
+/// let mut v = [OrderedF32(NAN), OrderedF32(2.0), OrderedF32(1.0)];
 /// v.sort();
-/// assert_eq!(v, [OrderedFloat(1.0), OrderedFloat(2.0), OrderedFloat(NAN)]);
+/// assert_eq!(v, [OrderedF32(1.0), OrderedF32(2.0), OrderedF32(NAN)]);
 /// ```
 ///
 /// Because `OrderedFloat` implements `Ord` and `Eq`, it can be used as a key in a `HashSet`,
 /// `HashMap`, `BTreeMap`, or `BTreeSet` (unlike the primitive `f32` or `f64` types):
 ///
 /// ```
-/// # use ordered_float::OrderedFloat;
+/// # use ordered_f32::OrderedF32;
 /// # use std::collections::HashSet;
 /// # use std::f32::NAN;
-/// let mut s: HashSet<OrderedFloat<f32>> = HashSet::new();
-/// s.insert(OrderedFloat(NAN));
-/// assert!(s.contains(&OrderedFloat(NAN)));
+/// let mut s: HashSet<OrderedF32> = HashSet::new();
+/// s.insert(OrderedF32(NAN));
+/// assert!(s.contains(&OrderedF32(NAN)));
 /// ```
 ///
 /// Some non-identical values are still considered equal by the [`PartialEq`] implementation,

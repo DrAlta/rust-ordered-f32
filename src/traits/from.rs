@@ -68,6 +68,19 @@ impl From<u128> for OrderedF32{
         Self(value as f32)
     }
 }
+impl From<usize> for OrderedF32{
+    fn from(value: usize) -> Self {
+        Self(value as f32)
+    }
+}
+
+
+
+impl From<(i64, u64)> for OrderedF32{
+    fn from(value: (i64, u64)) -> Self {
+        Self::new(value.0, value.1)
+    }
+}
 
 
 

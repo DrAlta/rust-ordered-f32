@@ -8,7 +8,7 @@ impl FromStr for OrderedF32 {
     /// Convert a &str to `OrderedFloat`. Returns an error if the string fails to parse.
     ///
     /// ```
-    /// use ordered_float::OrderedFloat;
+    /// use ordered_f32::OrderedF32;
     ///
     /// assert!("-10".parse::<OrderedF32>().is_ok());
     /// assert!("abc".parse::<OrderedF32>().is_err());
