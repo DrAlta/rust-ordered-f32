@@ -18,6 +18,23 @@ impl From<&mut f32> for OrderedF32{
     }
 }
 
+impl From<f64> for OrderedF32{
+    fn from(value: f64) -> Self {
+        Self(value as f32)
+    }
+}
+
+impl From<&f64> for OrderedF32{
+    fn from(value: &f64) -> Self {
+        Self(value.clone() as f32)
+    }
+}
+
+impl From<&mut f64> for OrderedF32{
+    fn from(value: &mut f64) -> Self {
+        Self(value.clone() as f32)
+    }
+}
 
 impl From<i32> for OrderedF32{
     fn from(value: i32) -> Self {
