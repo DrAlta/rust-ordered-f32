@@ -10,3 +10,12 @@ impl<'a> Neg for &'a OrderedF32
         OrderedF32(-(&self.0))
     }
 }
+impl Neg for OrderedF32
+{
+    type Output = OrderedF32;
+
+    #[inline]
+    fn neg(self) -> Self::Output {
+        OrderedF32(-(&self.0))
+    }
+}
