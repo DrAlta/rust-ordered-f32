@@ -18,10 +18,7 @@ mod signed;
 mod sqrt;
 mod to_f32;
 
-use core::ops::{
-    Add, AddAssign, Div, DivAssign, Mul, MulAssign, Rem, RemAssign, Sub,
-    SubAssign,
-};
+use core::ops::{Add, AddAssign, Div, DivAssign, Mul, MulAssign, Rem, RemAssign, Sub, SubAssign};
 
 // masks for the parts of the IEEE 754 float
 const SIGN_MASK: u64 = 0x8000000000000000u64;
@@ -38,7 +35,6 @@ fn canonicalize_signed_zero(x: f32) -> f32 {
     // canonicalize signed zero without any branches in one instruction.
     x + 0.0
 }
-
 
 #[inline]
 /// Used for hashing. Input must not be zero or NaN.
@@ -97,7 +93,6 @@ fn raw_double_bits(f: &f32) -> u64 {
 /// However, consider using [`bytemuck`] as a safe alternative if possible.
 ///
 
-
 macro_rules! impl_ordered_float_from {
     ($dst:ty, $src:ty) => {
         impl From<$src> for OrderedF32 {
@@ -142,8 +137,7 @@ macro_rules! impl_ordered_float_binop {
             }
         }
 
-        impl<'a> $imp<&'a f32> for OrderedF32
-        {
+        impl<'a> $imp<&'a f32> for OrderedF32 {
             type Output = OrderedF32;
 
             #[inline]
@@ -152,8 +146,7 @@ macro_rules! impl_ordered_float_binop {
             }
         }
 
-        impl<'a> $imp<&'a Self> for OrderedF32
-        {
+        impl<'a> $imp<&'a Self> for OrderedF32 {
             type Output = OrderedF32;
 
             #[inline]
@@ -162,8 +155,7 @@ macro_rules! impl_ordered_float_binop {
             }
         }
 
-        impl<'a> $imp<OrderedF32> for &'a OrderedF32
-        {
+        impl<'a> $imp<OrderedF32> for &'a OrderedF32 {
             type Output = OrderedF32;
 
             #[inline]
@@ -172,8 +164,7 @@ macro_rules! impl_ordered_float_binop {
             }
         }
 
-        impl<'a> $imp<f32> for &'a OrderedF32
-        {
+        impl<'a> $imp<f32> for &'a OrderedF32 {
             type Output = OrderedF32;
 
             #[inline]
@@ -182,8 +173,7 @@ macro_rules! impl_ordered_float_binop {
             }
         }
 
-        impl<'a> $imp<&'a f32> for &'a OrderedF32
-        {
+        impl<'a> $imp<&'a f32> for &'a OrderedF32 {
             type Output = OrderedF32;
 
             #[inline]

@@ -1,5 +1,5 @@
 use crate::OrderedF32;
-impl OrderedF32{
+impl OrderedF32 {
     pub const NEG_TEN: OrderedF32 = OrderedF32(-10.0);
     pub const NEG_NINE: OrderedF32 = OrderedF32(-9.0);
     pub const NEG_EIGHT: OrderedF32 = OrderedF32(-8.0);

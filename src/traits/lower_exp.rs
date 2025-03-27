@@ -8,4 +8,3 @@ impl fmt::LowerExp for OrderedF32 {
         self.0.fmt(f)
     }
 }
-

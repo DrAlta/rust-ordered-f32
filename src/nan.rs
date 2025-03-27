@@ -6,5 +6,4 @@ impl OrderedF32 {
     pub fn nan() -> Self {
         OrderedF32(f32::NAN)
     }
-
 }

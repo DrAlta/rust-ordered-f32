@@ -1,12 +1,12 @@
 mod as_mut;
 mod as_ref;
 mod debug;
-mod deref_mut;
 mod deref;
+mod deref_mut;
 mod display;
 mod eq;
-mod from_str;
 mod from;
+mod from_str;
 mod hash;
 mod into;
 mod lower_exp;

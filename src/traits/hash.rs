@@ -1,5 +1,5 @@
-use core::hash::Hasher;
 use core::hash::Hash;
+use core::hash::Hasher;
 
 use crate::canonicalize_signed_zero;
 use crate::raw_double_bits;

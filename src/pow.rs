@@ -1,6 +1,6 @@
 use crate::OrderedF32;
 
-pub trait PowPow<T>{
+pub trait PowPow<T> {
     fn powpow(&self, rhs: T) -> Self;
 }
 
@@ -23,8 +23,10 @@ impl PowPow<f32> for OrderedF32 {
 }
 
 impl OrderedF32 {
-    pub fn pow<T>(self, rhs:T) -> Self
-    where OrderedF32: PowPow<T> {
+    pub fn pow<T>(self, rhs: T) -> Self
+    where
+        OrderedF32: PowPow<T>,
+    {
         self.powpow(rhs)
     }
 }
