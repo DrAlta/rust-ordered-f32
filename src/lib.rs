@@ -7,6 +7,7 @@ mod traits;
 
 mod atan;
 mod atan2;
+mod ceil;
 pub mod consts;
 mod into_inner;
 mod is_nan;
