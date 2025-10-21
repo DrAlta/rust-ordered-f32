@@ -131,3 +131,9 @@ impl Into<usize> for &OrderedF32 {
         self.0 as usize
     }
 }
+
+#[test]
+fn into_u8_test(){
+    let x: u8 = OrderedF32::ONE.into();
+    assert_eq!(x, 1_u8)
+}

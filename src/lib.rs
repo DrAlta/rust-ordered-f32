@@ -9,6 +9,7 @@ mod atan;
 mod atan2;
 mod ceil;
 pub mod consts;
+mod floor;
 mod into_inner;
 mod is_nan;
 mod nan;
